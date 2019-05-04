@@ -37,7 +37,7 @@ const getServer = async () => {
     typeDefs
   })
   const server = new hapi.Server({
-    port: 3000
+    port: 3001
   })
 
   await apolloServer.applyMiddleware({
