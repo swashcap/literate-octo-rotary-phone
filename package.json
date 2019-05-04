@@ -7,10 +7,17 @@
   "author": "Cory Reed",
   "license": "Apache-2.0",
   "private": true,
-  "dependencies": {},
+  "dependencies": {
+    "@types/hapi": "^18.0.2",
+    "apollo-server-hapi": "^2.4.8",
+    "graphql": "^14.2.1",
+    "hapi": "^18.1.0",
+    "hard-rejection": "^2.1.0"
+  },
   "devDependencies": {
     "@commitlint/cli": "^7.5.2",
     "@commitlint/config-conventional": "^7.5.0",
+    "@types/graphql": "^14.2.0",
     "husky": "^2.2.0",
     "lint-staged": "^8.1.6",
     "prettier": "^1.17.0",
@@ -18,6 +25,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "format": "prettier --write '*.js' 'src/**/*.{ts,tsx}'"
+    "format": "prettier --write '*.js' 'src/**/*.{ts,tsx}'",
+    "start": "node src/index.js"
   }
 }
