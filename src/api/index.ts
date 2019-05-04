@@ -4,6 +4,8 @@ import hapi from 'hapi'
 import good from 'good'
 import { ApolloServer, gql } from 'apollo-server-hapi'
 
+import { startServer } from '../common/start-server'
+
 const books = [
   {
     title: "Harry Potter and the Sorcerer's stone",
@@ -70,9 +72,5 @@ const getServer = async () => {
 }
 
 if (require.main === module) {
-  ;(async () => {
-    const server = await getServer()
-    await server.start()
-    console.log(`Server running at: ${server.info.uri}`)
-  })()
+  startServer(getServer)
 }

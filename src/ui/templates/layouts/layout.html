@@ -1,0 +1,13 @@
+<!doctype html>
+<html{{#if htmlClass}} class="{{htmlClass}}"{{/if}}{{#if lang}} lang="{{lang}}"{{/if}}>
+  <head>
+    <meta charset="utf-8">
+    <title>{{title}}</title>
+    <meta name="description" content="{{description}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {{head}}
+  </head>
+  <body{{#if bodyClass}} class="{{bodyClass}}"{{/if}}>
+    {{{content}}}
+  </body>
+</html>
