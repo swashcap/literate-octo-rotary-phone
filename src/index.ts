@@ -1,10 +1,38 @@
 import 'hard-rejection/register'
 
 import hapi from 'hapi'
-import { ApolloServer } from 'apollo-server-hapi'
+import { ApolloServer, gql } from 'apollo-server-hapi'
+
+const books = [
+  {
+    title: "Harry Potter and the Sorcerer's stone",
+    author: 'J.K. Rowling'
+  },
+  {
+    title: 'Jurassic Park',
+    author: 'Michael Crichton'
+  }
+]
+
+const typeDefs = gql`
+  type Query {
+    books: [Book]
+  }
+  type Book {
+    title: String
+    author: String
+  }
+`
+
+const resolvers = {
+  Query: { books: () => books }
+}
 
 const getServer = async () => {
-  const apolloServer = new ApolloServer({})
+  const apolloServer = new ApolloServer({
+    resolvers,
+    typeDefs
+  })
   const server = new hapi.Server({
     port: 3000
   })
