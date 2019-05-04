@@ -10,6 +10,9 @@
   "dependencies": {
     "@types/hapi": "^18.0.2",
     "apollo-server-hapi": "^2.4.8",
+    "good": "^8.1.2",
+    "good-console": "^8.0.0",
+    "good-squeeze": "^5.1.0",
     "graphql": "^14.2.1",
     "hapi": "^18.1.0",
     "hard-rejection": "^2.1.0"
@@ -25,7 +28,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "format": "prettier --write '*.js' 'src/**/*.{ts,tsx}'",
+    "format": "prettier --write '*.js' '{src,types}/**/*.{ts,tsx}'",
     "start": "node src/index.js"
   }
 }

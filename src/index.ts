@@ -1,6 +1,7 @@
 import 'hard-rejection/register'
 
 import hapi from 'hapi'
+import good from 'good'
 import { ApolloServer, gql } from 'apollo-server-hapi'
 
 const books = [
@@ -42,6 +43,28 @@ const getServer = async () => {
   })
 
   await apolloServer.installSubscriptionHandlers(server.listener)
+
+  await server.register({
+    options: {
+      ops: {
+        interval: 1000
+      },
+      reporters: {
+        myConsoleReporter: [
+          {
+            module: 'good-squeeze',
+            name: 'Squeeze',
+            args: [{ log: '*', response: '*' }]
+          },
+          {
+            module: 'good-console'
+          },
+          'stdout'
+        ]
+      }
+    },
+    plugin: good
+  })
 
   return server
 }
