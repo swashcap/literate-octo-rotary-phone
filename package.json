@@ -1,0 +1,10 @@
+{
+  "name": "literate-octo-rotary-phone",
+  "version": "1.0.0",
+  "description": "Experimenting with Hapi + Apollo + SSR",
+  "main": "src/index.js",
+  "repository": "git@github.com:swashcap/literate-octo-rotary-phone.git",
+  "author": "Cory Reed",
+  "license": "Apache-2.0",
+  "private": true
+}
