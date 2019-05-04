@@ -14,7 +14,20 @@ const getServer = async () => {
 
   await server.register([
     {
-      options: {},
+      options: {
+        context: {
+          lang: 'en',
+          title: 'literate-octo-rotary-phone'
+        },
+        engines: {
+          html: handlebars
+        },
+        helpersPath: './templates/helpers',
+        layout: true,
+        layoutPath: './templates/layouts',
+        path: './templates',
+        relativeTo: __dirname
+      },
       plugin: vision
     },
     {
@@ -39,17 +52,6 @@ const getServer = async () => {
       plugin: good
     }
   ])
-
-  server.views({
-    engines: {
-      html: handlebars
-    },
-    helpersPath: './templates/helpers',
-    layout: true,
-    layoutPath: './templates/layouts',
-    path: './templates',
-    relativeTo: __dirname
-  })
 
   server.route({
     handler: {
