@@ -2,7 +2,6 @@
   "name": "literate-octo-rotary-phone",
   "version": "1.0.0",
   "description": "Experimenting with Hapi + Apollo + SSR",
-  "main": "src/index.js",
   "repository": "git@github.com:swashcap/literate-octo-rotary-phone.git",
   "author": "Cory Reed",
   "license": "Apache-2.0",
@@ -17,6 +16,7 @@
     "handlebars": "^4.1.2",
     "hapi": "^18.1.0",
     "hard-rejection": "^2.1.0",
+    "npm-run-all": "^4.1.5",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "vision": "^5.4.4"
@@ -24,8 +24,7 @@
   "devDependencies": {
     "@commitlint/cli": "^7.5.2",
     "@commitlint/config-conventional": "^7.5.0",
-    "@types/graphql": "^14.2.0",
-    "@types/react": "^16.8.16",
+    "@types/graphql": "^14.2.0", "@types/react": "^16.8.16",
     "@types/react-dom": "^16.8.4",
     "@types/vision": "^5.3.6",
     "husky": "^2.2.0",
@@ -36,6 +35,8 @@
   "scripts": {
     "build": "tsc",
     "format": "prettier --write '*.js' '{src,types}/**/*.{ts,tsx}'",
-    "start": "node src/index.js"
+    "start": "run-p start:*",
+    "start:api": "node src/api/index.js",
+    "start:ui": "node src/ui/index.js"
   }
 }
