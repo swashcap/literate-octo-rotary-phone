@@ -23,8 +23,10 @@ const getServer = async () => {
           html: handlebars
         },
         helpersPath: './templates/helpers',
+        isCached: process.env.NODE_ENV === 'production' ? true : false,
         layout: true,
         layoutPath: './templates/layouts',
+        partialsPath: './templates/partials',
         path: './templates',
         relativeTo: __dirname
       },
