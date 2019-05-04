@@ -1,0 +1,6 @@
+{
+  "linters": {
+    "*.{js,ts,tsx}": ["yarn format", "git add"]
+  },
+  "ignore": ["src/**/*.js"]
+}
